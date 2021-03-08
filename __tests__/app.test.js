@@ -71,52 +71,36 @@ describe('app routes', () => {
       expect(mungedLocal).toEqual(expectation);
     });
 
-    test.skip('returns formatted weather information', async () => {
+    test('returns formatted weather information', async () => {
       const expectation = [
         {
-          'moonrise_ts': 1615022573,
-          'wind_cdir': 'SSE',
-          'rh': 76,
-          'pres': 991.7,
-          'high_temp': 18.3,
-          'sunset_ts': 1615082109,
-          'ozone': 302.5,
-          'moon_phase': 0.308073,
-          'wind_gust_spd': 4.296875,
-          'snow_depth': 0,
-          'clouds': 10,
-          'ts': 1615017660,
-          'sunrise_ts': 1615040135,
-          'app_min_temp': 10,
-          'wind_spd': 2.613449,
-          'pop': 20,
-          'wind_cdir_full': 'south-southeast',
-          'slp': 1015.9,
-          'moon_phase_lunation': 0.78,
-          'valid_date': '2021-03-06',
-          'app_max_temp': 18.3,
-          'vis': 20.7616,
-          'dewpt': 9.3,
-          'snow': 0,
-          'uv': 0.74380165,
-          'weather': {
-            'icon': 'c02d',
-            'code': 801,
-            'description': 'Few clouds'
-          },
-          'wind_dir': 167,
-          'max_dhi': null,
-          'clouds_hi': 1,
-          'precip': 0.0625,
-          'low_temp': 10.5,
-          'max_temp': 18.4,
-          'moonset_ts': 1615062113,
-          'datetime': '2021-03-06',
-          'temp': 13.7,
-          'min_temp': 10,
-          'clouds_mid': 0,
-          'clouds_low': 10
+          'forecast': 'Few clouds',
+          'time': 'Sat Mar 06 2021',
         },
+        {
+          'forecast': 'Overcast clouds',
+          'time': 'Sun Mar 07 2021',
+        },
+        {
+          'forecast': 'Light shower rain',
+          'time': 'Mon Mar 08 2021',
+        },
+        {
+          'forecast': 'Few clouds',
+          'time': 'Tue Mar 09 2021',
+        },
+        {
+          'forecast': 'Light rain',
+          'time': 'Wed Mar 10 2021',
+        },
+        {
+          'forecast': 'Scattered clouds',
+          'time': 'Thu Mar 11 2021',
+        },
+        {
+          'forecast': 'Clear Sky',
+          'time': 'Fri Mar 12 2021',
+        }
       ];
 
       const mungedLocal = formatWeather(rawWeatherData);
@@ -124,147 +108,148 @@ describe('app routes', () => {
       expect(mungedLocal).toEqual(expectation);
     });
 
-    test.skip('returns formatted restaurunt information', async () => {
+    test('returns formatted restaurunt information', async () => {
       const expectation = [
         {
-          "name": "Voodoo Doughnut - Old Town",
-          "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/qHrzQy5ih2Sjhn7MdsCASw/o.jpg",
-          "price": "$",
-          "rating": 3.5,
-          "url": "https://www.yelp.com/biz/voodoo-doughnut-old-town-portland-2?adjust_creative=mjGhZaKg6Sc3Gm8PYqBkzg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=mjGhZaKg6Sc3Gm8PYqBkzg"
+          'image_url': 'https://s3-media2.fl.yelpcdn.com/bphoto/1TTqJZLs3MJzAwj0BvJl3Q/o.jpg',
+          'name': 'The Abbey Food & Bar',
+          'price': '$$',
+          'rating': 3.5,
+          'url': 'https://www.yelp.com/biz/the-abbey-food-and-bar-west-hollywood?adjust_creative=hLvgdwJDPYbXXs7G7K4diA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=hLvgdwJDPYbXXs7G7K4diA',
         },
         {
-          "name": "Andina Restaurant",
-          "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/Ij9yv97Ch6NwKhNdpezRhw/o.jpg",
-          "price": "$$$",
-          "rating": 4.5,
-          "url": "https://www.yelp.com/biz/andina-restaurant-portland?adjust_creative=mjGhZaKg6Sc3Gm8PYqBkzg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=mjGhZaKg6Sc3Gm8PYqBkzg"
+          'image_url': 'https://s3-media2.fl.yelpcdn.com/bphoto/wSi9IeEQmDeSHn0qHPvT0w/o.jpg',
+          'name': 'Poppy',
+          'price': '$$$',
+          'rating': 1.5,
+          'url': 'https://www.yelp.com/biz/poppy-los-angeles-3?adjust_creative=hLvgdwJDPYbXXs7G7K4diA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=hLvgdwJDPYbXXs7G7K4diA',
         },
         {
-          "name": "Lechon",
-          "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/wxLJSjqdB0v3wZSRqyNweg/o.jpg",
-          "price": "$$",
-          "rating": 4.5,
-          "url": "https://www.yelp.com/biz/lechon-portland?adjust_creative=mjGhZaKg6Sc3Gm8PYqBkzg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=mjGhZaKg6Sc3Gm8PYqBkzg"
+          'image_url': 'https://s3-media4.fl.yelpcdn.com/bphoto/ZdSEZVXT926lwDsl_fYA5A/o.jpg',
+          'name': 'Nightingale Plaza',
+          'price': '$$$$',
+          'rating': 2,
+          'url': 'https://www.yelp.com/biz/nightingale-plaza-los-angeles?adjust_creative=hLvgdwJDPYbXXs7G7K4diA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=hLvgdwJDPYbXXs7G7K4diA',
         },
         {
-          "name": "Luc Lac",
-          "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/azr6sD6VeJbdaiO2aKvSsw/o.jpg",
-          "price": "$$",
-          "rating": 4,
-          "url": "https://www.yelp.com/biz/luc-lac-portland-7?adjust_creative=mjGhZaKg6Sc3Gm8PYqBkzg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=mjGhZaKg6Sc3Gm8PYqBkzg"
+          'image_url': 'https://s3-media1.fl.yelpcdn.com/bphoto/3KRB7WSlbTnFrvoTK-IkdA/o.jpg',
+          'name': 'Bar Lubitsch',
+          'price': '$$',
+          'rating': 4,
+          'url': 'https://www.yelp.com/biz/bar-lubitsch-west-hollywood?adjust_creative=hLvgdwJDPYbXXs7G7K4diA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=hLvgdwJDPYbXXs7G7K4diA',
         },
         {
-          "name": "Deschutes Brewery Portland Public House",
-          "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/a-Av4dG6Xv3f1_XysFj4ow/o.jpg",
-          "price": "$$",
-          "rating": 4,
-          "url": "https://www.yelp.com/biz/deschutes-brewery-portland-public-house-portland?adjust_creative=mjGhZaKg6Sc3Gm8PYqBkzg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=mjGhZaKg6Sc3Gm8PYqBkzg"
+          'image_url': 'https://s3-media2.fl.yelpcdn.com/bphoto/Ufst9LUiQ1WGCzuWZWq20w/o.jpg',
+          'name': 'Greystone Manor Supperclub',
+          'price': '$$$',
+          'rating': 3,
+          'url': 'https://www.yelp.com/biz/greystone-manor-supperclub-west-hollywood?adjust_creative=hLvgdwJDPYbXXs7G7K4diA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=hLvgdwJDPYbXXs7G7K4diA',
         },
         {
-          "name": "Portland City Grill",
-          "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/-N8P6cTACCKnSuJaqeCyXg/o.jpg",
-          "price": "$$$",
-          "rating": 4,
-          "url": "https://www.yelp.com/biz/portland-city-grill-portland-7?adjust_creative=mjGhZaKg6Sc3Gm8PYqBkzg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=mjGhZaKg6Sc3Gm8PYqBkzg"
+          'image_url': 'https://s3-media4.fl.yelpcdn.com/bphoto/nUFJahhGJnLTs1brpqQLfA/o.jpg',
+          'name': 'Micky\'s West Hollywood',
+          'price': '$$',
+          'rating': 3,
+          'url': 'https://www.yelp.com/biz/mickys-west-hollywood-west-hollywood?adjust_creative=hLvgdwJDPYbXXs7G7K4diA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=hLvgdwJDPYbXXs7G7K4diA',
         },
         {
-          "name": "Cheryl’s on 12th",
-          "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/w1tcp-5xJyQz19HH05JoVA/o.jpg",
-          "price": "$$",
-          "rating": 4.5,
-          "url": "https://www.yelp.com/biz/cheryl-s-on-12th-portland?adjust_creative=mjGhZaKg6Sc3Gm8PYqBkzg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=mjGhZaKg6Sc3Gm8PYqBkzg"
+          'image_url': 'https://s3-media3.fl.yelpcdn.com/bphoto/U2VcifTctSOe0JJHXnjmyA/o.jpg',
+          'name': 'Skybar',
+          'price': '$$$',
+          'rating': 3.5,
+          'url': 'https://www.yelp.com/biz/skybar-west-hollywood?adjust_creative=hLvgdwJDPYbXXs7G7K4diA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=hLvgdwJDPYbXXs7G7K4diA',
         },
         {
-          "name": "Screen Door",
-          "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/lqmMYlLRV-aoH73koWA6Ew/o.jpg",
-          "price": "$$",
-          "rating": 4.5,
-          "url": "https://www.yelp.com/biz/screen-door-portland?adjust_creative=mjGhZaKg6Sc3Gm8PYqBkzg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=mjGhZaKg6Sc3Gm8PYqBkzg"
+          'image_url': 'https://s3-media4.fl.yelpcdn.com/bphoto/i_9_3MvjypwsPHQbKeUl2Q/o.jpg',
+          'name': '1 Oak',
+          'price': '$$$',
+          'rating': 2,
+          'url': 'https://www.yelp.com/biz/1-oak-west-hollywood?adjust_creative=hLvgdwJDPYbXXs7G7K4diA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=hLvgdwJDPYbXXs7G7K4diA',
         },
         {
-          "name": "Q Restaurant & Bar",
-          "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/jAH0XyZe5N8YTrOy71SuJg/o.jpg",
-          "price": "$$",
-          "rating": 4.5,
-          "url": "https://www.yelp.com/biz/q-restaurant-and-bar-portland?adjust_creative=mjGhZaKg6Sc3Gm8PYqBkzg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=mjGhZaKg6Sc3Gm8PYqBkzg"
+          'image_url': 'https://s3-media3.fl.yelpcdn.com/bphoto/Rc1eWKpq3xSK2wueTWw4hw/o.jpg',
+          'name': 'Party In LA',
+          'price': '$',
+          'rating': 4.5,
+          'url': 'https://www.yelp.com/biz/party-in-la-los-angeles-2?adjust_creative=hLvgdwJDPYbXXs7G7K4diA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=hLvgdwJDPYbXXs7G7K4diA',
         },
         {
-          "name": "Nong's Khao Man Gai",
-          "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/jtp9n8HTjid4lEeXlcKKiA/o.jpg",
-          "price": "$$",
-          "rating": 4.5,
-          "url": "https://www.yelp.com/biz/nongs-khao-man-gai-portland-2?adjust_creative=mjGhZaKg6Sc3Gm8PYqBkzg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=mjGhZaKg6Sc3Gm8PYqBkzg"
+          'image_url': 'https://s3-media3.fl.yelpcdn.com/bphoto/AgnNTSovPBcyldaSQeQXNw/o.jpg',
+          'name': 'The Viper Room',
+          'price': '$$',
+          'rating': 3,
+          'url': 'https://www.yelp.com/biz/the-viper-room-west-hollywood?adjust_creative=hLvgdwJDPYbXXs7G7K4diA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=hLvgdwJDPYbXXs7G7K4diA',
         },
         {
-          "name": "Grassa",
-          "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/zloG1rU5-15Q4MVmf8inbA/o.jpg",
-          "price": "$$",
-          "rating": 4,
-          "url": "https://www.yelp.com/biz/grassa-portland?adjust_creative=mjGhZaKg6Sc3Gm8PYqBkzg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=mjGhZaKg6Sc3Gm8PYqBkzg"
+          'image_url': 'https://s3-media3.fl.yelpcdn.com/bphoto/18KVk0F-KGYdcSK8eg9MYg/o.jpg',
+          'name': 'Derriere',
+          'price': undefined,
+          'rating': 3.5,
+          'url': 'https://www.yelp.com/biz/derriere-los-angeles?adjust_creative=hLvgdwJDPYbXXs7G7K4diA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=hLvgdwJDPYbXXs7G7K4diA',
         },
         {
-          "name": "Cuon - Vietnamese Street Food",
-          "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/Zetji_yDJJDG8eksunYiTg/o.jpg",
-          "price": "$$",
-          "rating": 4.5,
-          "url": "https://www.yelp.com/biz/cuon-vietnamese-street-food-portland-3?adjust_creative=mjGhZaKg6Sc3Gm8PYqBkzg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=mjGhZaKg6Sc3Gm8PYqBkzg"
+          'image_url': 'https://s3-media1.fl.yelpcdn.com/bphoto/6zrHRZNOdQpKBqIHndAG4A/o.jpg',
+          'name': 'Sound Nightclub',
+          'price': '$$',
+          'rating': 3,
+          'url': 'https://www.yelp.com/biz/sound-nightclub-los-angeles?adjust_creative=hLvgdwJDPYbXXs7G7K4diA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=hLvgdwJDPYbXXs7G7K4diA',
         },
         {
-          "name": "Salt & Straw",
-          "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/r6y-0Q2z3cnx1bQKxn-iHw/o.jpg",
-          "price": "$$",
-          "rating": 4.5,
-          "url": "https://www.yelp.com/biz/salt-and-straw-portland-2?adjust_creative=mjGhZaKg6Sc3Gm8PYqBkzg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=mjGhZaKg6Sc3Gm8PYqBkzg"
+          'image_url': 'https://s3-media3.fl.yelpcdn.com/bphoto/ERljXDNUijwKoWNwSD37Cg/o.jpg',
+          'name': 'RASPOUTINE Los Angeles',
+          'price': undefined,
+          'rating': 3,
+          'url': 'https://www.yelp.com/biz/raspoutine-los-angeles-west-hollywood-2?adjust_creative=hLvgdwJDPYbXXs7G7K4diA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=hLvgdwJDPYbXXs7G7K4diA',
         },
         {
-          "name": "Stumptown Coffee Roasters",
-          "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/ZRKWUoGRDo1FryxlHfooRw/o.jpg",
-          "price": "$",
-          "rating": 4,
-          "url": "https://www.yelp.com/biz/stumptown-coffee-roasters-portland?adjust_creative=mjGhZaKg6Sc3Gm8PYqBkzg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=mjGhZaKg6Sc3Gm8PYqBkzg"
+          'image_url': 'https://s3-media1.fl.yelpcdn.com/bphoto/B7TPwZJyBRXawaZIFLiKng/o.jpg',
+          'name': 'Avalon Hollywood',
+          'price': '$$',
+          'rating': 3,
+          'url': 'https://www.yelp.com/biz/avalon-hollywood-los-angeles-2?adjust_creative=hLvgdwJDPYbXXs7G7K4diA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=hLvgdwJDPYbXXs7G7K4diA',
         },
         {
-          "name": "Ground Kontrol Classic Arcade",
-          "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/oU5nd95LfA3okpd9J_uPWg/o.jpg",
-          "price": "$",
-          "rating": 4,
-          "url": "https://www.yelp.com/biz/ground-kontrol-classic-arcade-portland-2?adjust_creative=mjGhZaKg6Sc3Gm8PYqBkzg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=mjGhZaKg6Sc3Gm8PYqBkzg"
+          'image_url': 'https://s3-media3.fl.yelpcdn.com/bphoto/GGHrsKmKuPQCUdpqF8d62g/o.jpg',
+          'name': 'Bootsy Bellows',
+          'price': '$$$',
+          'rating': 2,
+          'url': 'https://www.yelp.com/biz/bootsy-bellows-west-hollywood?adjust_creative=hLvgdwJDPYbXXs7G7K4diA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=hLvgdwJDPYbXXs7G7K4diA',
         },
         {
-          "name": "Le Pigeon",
-          "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/ARlFgwCNq62izXYf1TUQiA/o.jpg",
-          "price": "$$$",
-          "rating": 4.5,
-          "url": "https://www.yelp.com/biz/le-pigeon-portland-2?adjust_creative=mjGhZaKg6Sc3Gm8PYqBkzg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=mjGhZaKg6Sc3Gm8PYqBkzg"
+          'image_url': 'https://s3-media3.fl.yelpcdn.com/bphoto/hmn0fikXEXH4atluYcld7Q/o.jpg',
+          'name': 'The Chapel at The Abbey ',
+          'price': '$$$',
+          'rating': 3,
+          'url': 'https://www.yelp.com/biz/the-chapel-at-the-abbey-west-hollywood-7?adjust_creative=hLvgdwJDPYbXXs7G7K4diA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=hLvgdwJDPYbXXs7G7K4diA',
         },
         {
-          "name": "Olympia Provisions",
-          "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/w8w2mkIrowArbwpzIInq9g/o.jpg",
-          "price": "$$",
-          "rating": 4.5,
-          "url": "https://www.yelp.com/biz/olympia-provisions-portland-2?adjust_creative=mjGhZaKg6Sc3Gm8PYqBkzg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=mjGhZaKg6Sc3Gm8PYqBkzg"
+          'image_url': 'https://s3-media1.fl.yelpcdn.com/bphoto/T0dxcsn-FwZEo4rcfk8s-g/o.jpg',
+          'name': 'Freak City',
+          'price': '$$',
+          'rating': 4,
+          'url': 'https://www.yelp.com/biz/freak-city-los-angeles?adjust_creative=hLvgdwJDPYbXXs7G7K4diA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=hLvgdwJDPYbXXs7G7K4diA',
         },
         {
-          "name": "Lardo",
-          "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/b0E-cDYYiWuvBxFH-YPONA/o.jpg",
-          "price": "$$",
-          "rating": 4,
-          "url": "https://www.yelp.com/biz/lardo-portland-4?adjust_creative=mjGhZaKg6Sc3Gm8PYqBkzg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=mjGhZaKg6Sc3Gm8PYqBkzg"
+          'image_url': 'https://s3-media2.fl.yelpcdn.com/bphoto/kt_fYtxQgJFSxw0_aiDZcw/o.jpg',
+          'name': 'Las Palmas Club',
+          'price': undefined,
+          'rating': 5,
+          'url': 'https://www.yelp.com/biz/las-palmas-club-los-angeles?adjust_creative=hLvgdwJDPYbXXs7G7K4diA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=hLvgdwJDPYbXXs7G7K4diA',
         },
         {
-          "name": "Mediterranean Exploration Company",
-          "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/AwxZ3eb04OiVH-92xKf_jg/o.jpg",
-          "price": "$$",
-          "rating": 4.5,
-          "url": "https://www.yelp.com/biz/mediterranean-exploration-company-portland-2?adjust_creative=mjGhZaKg6Sc3Gm8PYqBkzg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=mjGhZaKg6Sc3Gm8PYqBkzg"
+          'image_url': 'https://s3-media4.fl.yelpcdn.com/bphoto/igqU4NiCgSM-jkWRYEC7kA/o.jpg',
+          'name': 'Ladies Touch',
+          'price': '$$',
+          'rating': 5,
+          'url': 'https://www.yelp.com/biz/ladies-touch-los-angeles?adjust_creative=hLvgdwJDPYbXXs7G7K4diA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=hLvgdwJDPYbXXs7G7K4diA',
         },
         {
-          "name": "Lan Su Chinese Garden",
-          "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/gY4shaDsFS6IfRH2fyMTnw/o.jpg",
-          "rating": 4.5,
-          "url": "https://www.yelp.com/biz/lan-su-chinese-garden-portland?adjust_creative=mjGhZaKg6Sc3Gm8PYqBkzg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=mjGhZaKg6Sc3Gm8PYqBkzg"
-        }
+          'image_url': 'https://s3-media4.fl.yelpcdn.com/bphoto/9nJlju7hrEsWKqkpu9j3mA/o.jpg',
+          'name': 'Arena Ktown',
+          'price': '$$',
+          'rating': 3.5,
+          'url': 'https://www.yelp.com/biz/arena-ktown-los-angeles?adjust_creative=hLvgdwJDPYbXXs7G7K4diA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=hLvgdwJDPYbXXs7G7K4diA',
+        },
       ];
       const mungedYelp = formatReviews(rawYelpData);
 
