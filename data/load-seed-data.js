@@ -18,10 +18,10 @@ async function run() {
                       VALUES ($1, $2)
                       RETURNING *;
                   `,
-        [user.email, user.hash]);
+          [user.email, user.hash]);
       })
     );
-      
+
     const user = users[0].rows[0];
 
     await Promise.all(
@@ -30,18 +30,18 @@ async function run() {
                     INSERT INTO animals (name, cool_factor, owner_id)
                     VALUES ($1, $2, $3);
                 `,
-        [animal.name, animal.cool_factor, user.id]);
+          [animal.name, animal.cool_factor, user.id]);
       })
     );
-    
+
 
     console.log('seed data load complete', getEmoji(), getEmoji(), getEmoji());
   }
-  catch(err) {
+  catch (err) {
     console.log(err);
   }
   finally {
     client.end();
   }
-    
+
 }
